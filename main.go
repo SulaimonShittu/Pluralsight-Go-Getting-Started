@@ -1,15 +1,11 @@
 package main
 
 import (
-	"Pluralsight-Go-Getting-Started/models"
-	"fmt"
+	"Pluralsight-Go-Getting-Started/controllers"
+	"net/http"
 )
 
 func main() {
-	u := models.User{
-		ID:        2,
-		FirstName: "Sulaimon",
-		LastName:  "Shittu",
-	}
-	fmt.Println(u)
+	controllers.RegisterControllers()
+	http.ListenAndServe(":3000", nil)
 }
